@@ -10,3 +10,5 @@ const messages = [
       added: new Date()
     }
   ];
+
+  export default messages;
