@@ -6,15 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <% messages.map((message) => { %>
-            <li>
+    <a href="/new">New mesage</a>
+    <% messages.toReversed().map((message, index) => { %>
+        <button>
+            <a href="/<%=index%>">
                 <div><%=message.text%></div>
                 <div><%=message.user%></div>
                 <div><%=message.added%></div>
-            </li>
-        <% }) %>
-    </ul>
-    <a href="/new">New mesage</a>
+            </a>
+        </button>
+    <% }) %>
 </body>
 </html>
