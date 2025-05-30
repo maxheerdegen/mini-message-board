@@ -1,0 +1,12 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    box-shadow: none;
+}
+
+h1 {
+    text-align: center;
+}
