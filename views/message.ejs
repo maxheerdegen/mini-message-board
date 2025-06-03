@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
     <title>Message</title>
 </head>
 <body>
     <div class="message">
-        <div><%= messages.toReversed()[id].text %></div>
-        <div><%= messages.toReversed()[id].user %></div>
-        <div><%= messages.toReversed()[id].added %></div>
+        <div class="messageText"><%= messages.toReversed()[id].text %></div>
+        <div class="author"><%= messages.toReversed()[id].user %></div>
+        <div class="date"><%= messages.toReversed()[id].added.toLocaleString()%></div>
     </div>
 </body>
 </html>

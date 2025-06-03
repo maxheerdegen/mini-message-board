@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
     <title>New Message</title>
 </head>
 <body>
     <h1>Your Message</h1>
-    <form method="post" action="/message/new">
+    <form method="post" action="/message/new" class="messageForm">
         <ul>
             <li>
                 <label for="messageText">
-                    Message:<input type="text" name="messageText" id="messageText">
+                    Your Message*:<input type="text" name="messageText" id="messageText" minlength="2" required>
                 </label>
             </li>
             <li>
                 <label for="messageUser">
-                    Your Name: <input type="text" name="messageUser" id="messageUser">
+                    Your Name*: <input type="text" name="messageUser" id="messageUser" required>
                 </label>
             </li>
             <li>
-                <button type="submit">Send your message</button>
+                <button type="submit" class="submitButton">Send your message</button>
             </li>
         </ul>
     </form>
