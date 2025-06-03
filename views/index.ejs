@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+    <title>Messages</title>
 </head>
 <body>
     <h1>Messages</h1>
-    <button><a href="/message/new">New mesage</a></button>
-    <% messages.toReversed().map((message, index) => { %>
-        <button>
-            <a href="/message/<%=index%>">
-                <div><%=message.text%></div>
-                <div><%=message.user%></div>
-                <div><%=message.added%></div>
-            </a>
-        </button>
-    <% }) %>
+    <button class="new"><a href="/message/new">New mesage</a></button>
+    <div class="messages">
+        <% messages.toReversed().map((message, index) => { %>
+            <button>
+                <a href="/message/<%=index%>">
+                    <div><%=message.text%></div>
+                    <div><%=message.user%></div>
+                    <div><%=message.added%></div>
+                </a>
+            </button>
+        <% }) %>
+    </div>
 </body>
 </html>
