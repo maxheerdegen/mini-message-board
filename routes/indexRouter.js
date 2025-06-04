@@ -1,8 +1,11 @@
 import { Router } from 'express';
-import messages from '../db.js';
+import { getAllMessages } from '../db/db.js';
 
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => res.render("index", {title: "mini messageboard", messages: messages }));
+indexRouter.get("/", async function (req, res) {
+    const messages = await getAllMessages();
+    res.render("index", {title: "mini messageboard", messages: messages });
+})
 
 export default indexRouter;

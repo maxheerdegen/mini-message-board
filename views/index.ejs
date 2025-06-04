@@ -13,9 +13,9 @@
         <% messages.toReversed().map((message, index) => { %>
             <button class="message">
                 <a href="/message/<%=index%>">
-                    <div class="messageText">"<%=message.text%>"</div>
-                    <div class="author">-<%=message.user%></div>
-                    <div class="date"><%=message.added.toLocaleString()%></div>
+                    <div class="messageText">"<%=message.message%>"</div>
+                    <div class="author">-<%=message.author%></div>
+                    <div class="date"><%=message.added%></div>
                 </a>
             </button>
         <% }) %>
