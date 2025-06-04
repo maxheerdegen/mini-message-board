@@ -1,4 +1,7 @@
 import { Client } from 'pg';
+import 'dotenv/config';
+
+const { HOST, USER, DATABASE, PORT } = process.env;
 
 const added = new Date().toLocaleString();
 
@@ -19,7 +22,7 @@ VALUES
 async function main() {
     console.log("seeding...");
     const client = new Client({
-        connectionString: "postgresql://maxheerdegen@localhost:5432/message_board",
+        connectionString: `postgresql://${USER}@${HOST}:${PORT}/${DATABASE}`
     })
     await client.connect();
     await client.query(SQL);
