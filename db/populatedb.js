@@ -1,7 +1,7 @@
 import { Client } from 'pg';
 import 'dotenv/config';
 
-const { HOST, USER, DATABASE, PORT } = process.env;
+const { PGHOST, PGUSER, PGDATABASE, PGPASSWORD } = process.env;
 
 const added = new Date().toLocaleString();
 
@@ -22,7 +22,7 @@ VALUES
 async function main() {
     console.log("seeding...");
     const client = new Client({
-        connectionString: `postgresql://${USER}@${HOST}:${PORT}/${DATABASE}`
+        connectionString: `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?sslmode=require`
     })
     await client.connect();
     await client.query(SQL);
